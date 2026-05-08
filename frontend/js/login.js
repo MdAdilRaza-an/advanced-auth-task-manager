@@ -10,17 +10,15 @@ async function loginUser() {
 
         const response =
         await fetch(
-
-            '"https://advanced-auth-task-manager.onrender.com/api/auth/login"',
-
+            'https://advanced-auth-task-manager.onrender.com/api/auth/login',
             {
-                method:'POST',
+                method: 'POST',
 
-                headers:{
-                    'Content-Type':'application/json'
+                headers: {
+                    'Content-Type': 'application/json'
                 },
 
-                body:JSON.stringify({
+                body: JSON.stringify({
                     email,
                     password
                 })
@@ -28,28 +26,28 @@ async function loginUser() {
         );
 
         const data =
-        await response.text();
+        await response.json();
 
         console.log(data);
 
-        if(data.includes('token')){
+        if (data.token) {
 
             localStorage.setItem(
                 'token',
                 data.token
             );
 
-            alert('Login Success ✅');
+            alert(data.message || 'Login Success ✅');
 
             window.location =
             'dashboard.html';
 
-        }else{
+        } else {
 
-            alert(data.message);
+            alert(data.message || 'Login Failed ❌');
         }
 
-    } catch(error){
+    } catch (error) {
 
         console.log(error);
 
