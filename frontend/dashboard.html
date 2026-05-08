@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+    href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Dashboard 🚀</h1>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+
+    <div class="task-box">
+
+        <h2>Task Manager ✅</h2>
+
+        <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter Task">
+
+        <button onclick="addTask()">
+            Add Task
+        </button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/task.js"></script>
+
+</body>
+</html>
