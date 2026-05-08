@@ -14,7 +14,7 @@ async function registerUser(){
         const response =
         await fetch(
 
-            '"https://advanced-auth-task-manager.onrender.com/api/auth/register"',
+            'https://advanced-auth-task-manager.onrender.com/api/auth/register',
 
             {
                 method:'POST',
@@ -42,5 +42,7 @@ async function registerUser(){
     }catch(error){
 
         console.log(error);
+
+        alert('Server Error ❌');
     }
 }
